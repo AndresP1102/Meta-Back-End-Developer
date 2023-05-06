@@ -1,11 +1,11 @@
 menu = {
     1: {"name": 'espresso',
         "price": 1.99},
-    2: {"name": 'coffee', 
+    2: {"name": 'coffee',
         "price": 2.50},
-    3: {"name": 'cake', 
+    3: {"name": 'cake',
         "price": 2.79},
-    4: {"name": 'soup', 
+    4: {"name": 'soup',
         "price": 4.50},
     5: {"name": 'sandwich',
         "price": 4.99}
@@ -14,7 +14,7 @@ menu = {
 def calculate_subtotal(order):
     """ Calculates the subtotal of an order
 
-    [IMPLEMENT ME] 
+    [IMPLEMENT ME]
         1. Add up the prices of all the items in the order and return the sum
 
     Args:
@@ -25,6 +25,12 @@ def calculate_subtotal(order):
     """
     print('Calculating bill subtotal...')
     ### WRITE SOLUTION HERE
+    sum = 0
+    for item in order:
+        sum += item['price']
+    print("Your subtotal is: " + str(sum) + " dollars")
+    subtotal = round(sum, 2)
+    return subtotal
 
 
     raise NotImplementedError()
@@ -32,7 +38,7 @@ def calculate_subtotal(order):
 def calculate_tax(subtotal):
     """ Calculates the tax of an order
 
-    [IMPLEMENT ME] 
+    [IMPLEMENT ME]
         1. Multiply the subtotal by 15% and return the product rounded to two decimals.
 
     Args:
@@ -43,6 +49,10 @@ def calculate_tax(subtotal):
     """
     print('Calculating tax from subtotal...')
     ### WRITE SOLUTION HERE
+    tax = subtotal * 0.15
+    print("Your tax is: " + str(tax) + " dollars")
+    tax = round(tax, 2)
+    return tax
 
     raise NotImplementedError()
 
@@ -58,13 +68,21 @@ def summarize_order(order):
         order: list of dicts that contain an item name and price
 
     Returns:
-        tuple of names and total. The return statement should look like 
-        
+        tuple of names and total. The return statement should look like
+
         return names, total
 
     """
     print_order(order)
     ### WRITE SOLUTION HERE
+    for item in order:
+        names = item['name']
+    subtotal = calculate_subtotal(order)
+    tax = calculate_tax(subtotal)
+    total = subtotal + tax
+    print("Your total is: " + str(round(total,2)) + " dollars")
+    total = round(total, 2)
+    return names, total
 
     raise NotImplementedError()
 
@@ -100,6 +118,7 @@ Feel free to change, uncomment, and add these as you wish.
 '''
 def main():
     order = take_order()
+    summarize_order(order)
     print_order(order)
 
     # subtotal = calculate_subtotal(order)

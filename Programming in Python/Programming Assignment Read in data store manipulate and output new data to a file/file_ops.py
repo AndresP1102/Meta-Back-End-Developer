@@ -14,7 +14,7 @@ def read_file(file_name):
         string: contents of the given file.
     """
     ### WRITE SOLUTION HERE
-    with open("sampletext.txt") as file:
+    with open(file_name) as file:
         data = file.read()
     return data
 
@@ -35,6 +35,10 @@ def read_file_into_list(file_name):
         list: a list where each element is a line in the file.
     """
     ### WRITE SOLUTION HERE
+    with open(file_name) as file:
+        data = file.read()
+        data_content_list = data.split("\n")
+    return data_content_list
 
     raise NotImplementedError()
 
@@ -54,6 +58,10 @@ def write_first_line_to_file(file_contents, output_filename):
         output_filename: the name of the file to be written to
     """
     ### WRITE SOLUTION HERE
+    first_line = file_contents.split("\n")[0]  # Get the first line
+    with open(output_filename, "w") as file:
+        file.write(first_line)
+        return
 
     raise NotImplementedError()
 
@@ -73,6 +81,15 @@ def read_even_numbered_lines(file_name):
         list: a list of the even-numbered lines of the file
     """
     ### WRITE SOLUTION HERE
+    with open(file_name) as file:
+        data = file.read()
+        data_content_list = data.split("\n")
+        even_list=[]
+        for idx, i in enumerate (data_content_list):
+            if (idx+1)%2==0:
+                even_list.append(i)
+    return even_list
+
 
     raise NotImplementedError()
 
@@ -92,6 +109,11 @@ def read_file_in_reverse(file_name):
         list: list of the lines of the file in reverse order.
     """
     ### WRITE SOLUTION HERE
+    with open(file_name) as file:
+        data = file.read()
+        data_content_list = data.split("\n")
+        reverse_list = data_content_list[::-1]
+        return reverse_list
 
     raise NotImplementedError()
 
@@ -104,8 +126,8 @@ def main():
     # print(read_file_into_list("sampletext.txt"))
     # write_first_line_to_file(file_contents, "online.txt")
     # print(read_even_numbered_lines("sampletext.txt"))
-    # print(read_file_in_reverse("sampletext.txt"))
-    print(file_contents)
+    print(read_file_in_reverse("sampletext.txt"))
+    # print(file_contents)
 
 if __name__ == "__main__":
     main()

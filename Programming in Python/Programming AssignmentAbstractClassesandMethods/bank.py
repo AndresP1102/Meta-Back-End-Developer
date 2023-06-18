@@ -8,7 +8,7 @@ class Bank(ABC):
     [IMPLEMENT ME]
         1. This class must derive from class ABC
         2. Write a basicinfo() function that prints out "This is a generic bank" and
-           returns the string "Generic bank: 0" 
+           returns the string "Generic bank: 0"
         3. Define a second function called withdraw and keep it empty by
            adding the `pass` keyword under it. Make this function abstract by
            adding an '@abstractmethod' tag right above the function declaration.

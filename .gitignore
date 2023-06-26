@@ -1,1 +1,5 @@
-C:\Users\andres.partidas\Documents\GitHub\Meta-Back-End-Developer\Django\django-venv
+# ignore files in folder
+Django/django-venv/*
+
+# ...but keep the folder
+!Django/django-venv/.gitkeep

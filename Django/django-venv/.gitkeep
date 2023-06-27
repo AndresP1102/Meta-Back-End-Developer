@@ -1,0 +1,5 @@
+# ignore files in folder
+Django/django-venv/*
+
+# ...but keep the folder
+!Django/django-venv/.gitkeep

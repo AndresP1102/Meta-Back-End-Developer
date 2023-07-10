@@ -16,7 +16,7 @@ def drinks(request, drink_name):
 
     return HttpResponse(f"<h2> {drink_name} <h2>" + choice_of_drink)
 
-def aboutus(request):
+def about(request):
     return HttpResponse("About us")
 
 def menu(request):

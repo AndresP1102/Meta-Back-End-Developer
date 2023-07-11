@@ -5,7 +5,7 @@ from myapp.models import DrinksCategory, Drinks, Booking, Employees, Menu
 
 # Create your views here.
 def home(request):
-    return HttpResponse("Welcome to Little Lemon!")
+    return render(request, "home.html")
 
 def drinks(request, drink_name):
     drink = {
@@ -18,15 +18,13 @@ def drinks(request, drink_name):
     return HttpResponse(f"<h2> {drink_name} <h2>" + choice_of_drink)
 
 def about(request):
-    return HttpResponse("About us")
+    return render(request, "about.html")
 
 def menu(request):
-    menu_items = Menu.objects.all()
-    items_dict = {"menu": menu_items}
-    return render(request, "menu.html", items_dict)
+    return render(request, "menu.html")
 
 def book(request):
-    return HttpResponse("Make a booking")
+    return render(request, "book.html")
 
 def form_view(request):
     form = BookingForm()

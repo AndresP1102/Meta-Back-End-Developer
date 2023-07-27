@@ -10,5 +10,5 @@ class RatingsView(generics.ListCreateAPIView):
     def get_permissions(self):
         if(self.request.method == 'GET'):
             return []
-        
+
         return [IsAuthenticated()]

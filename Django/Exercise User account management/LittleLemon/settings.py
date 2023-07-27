@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken', # Add this line to enable token authentication
     'djoser', # Add this line to enable djoser
     'LittleLemonDRF', # Add this line to enable LittleLemonDRF
+    'rest_framework', # Add this line to enable rest_framework
 ]
 
 MIDDLEWARE = [
@@ -132,5 +133,5 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
-    
+
 }
